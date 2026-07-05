@@ -1,0 +1,49 @@
+# ============ BACKEND ============
+hotel-management-backend/target/
+hotel-management-backend/.classpath
+hotel-management-backend/.project
+hotel-management-backend/.settings/
+hotel-management-backend/*.log
+hotel-management-backend/mvnw
+hotel-management-backend/mvnw.cmd
+hotel-management-backend/.mvn/
+
+# ============ FRONTEND ============
+hotel-management-frontend/node_modules/
+hotel-management-frontend/dist/
+hotel-management-frontend/dist-ssr/
+hotel-management-frontend/.env
+hotel-management-frontend/.env.local
+hotel-management-frontend/.env.*.local
+hotel-management-frontend/*.log
+hotel-management-frontend/npm-debug.log*
+hotel-management-frontend/yarn-debug.log*
+hotel-management-frontend/yarn-error.log*
+hotel-management-frontend/.vite/
+
+# ============ IDE ============
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# ============ OS ============
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+
+# ============ DATABASE ============
+*.db
+*.sqlite
+*.sqlite3
+
+# ============ LOGS ============
+*.log
+logs/
