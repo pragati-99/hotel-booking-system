@@ -1,0 +1,673 @@
+/* src/styles/navbar.css - Complete Fixed */
+.navbar-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9990;
+  padding: 0 30px;
+  transition: all 0.4s ease;
+  background: transparent;
+  height: 70px;
+  animation: fadeInDown 0.5s ease both;
+}
+
+.navbar-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+/* Scrolled State - White Background */
+.navbar-scrolled {
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Dark Background for non-home pages when not scrolled */
+.navbar-dark-bg {
+  background: rgba(0, 0, 0, 0.85) !important;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 4px;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+  font-family: 'Georgia', serif;
+}
+
+.navbar-main:not(.navbar-scrolled) .logo-text {
+  color: #ffffff;
+}
+
+.navbar-scrolled .logo-text {
+  color: #1a1a1a !important;
+}
+
+.logo-sub {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+  font-family: 'Georgia', serif;
+}
+
+.navbar-main:not(.navbar-scrolled) .logo-sub {
+  color: #c9a27b;
+}
+
+.navbar-scrolled .logo-sub {
+  color: #c9a27b !important;
+}
+
+/* Desktop Menu */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+  align-items: center;
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar-main:not(.navbar-scrolled) .navbar-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-scrolled .navbar-link {
+  color: rgba(26, 26, 26, 0.8) !important;
+}
+
+.navbar-link svg {
+  font-size: 14px;
+}
+
+.navbar-main:not(.navbar-scrolled) .navbar-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-scrolled .navbar-link:hover {
+  color: #1a1a1a !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.navbar-main:not(.navbar-scrolled) .navbar-link.active {
+  color: #c9a27b;
+  background: rgba(201, 162, 123, 0.2);
+}
+
+.navbar-scrolled .navbar-link.active {
+  color: #c9a27b !important;
+  background: rgba(201, 162, 123, 0.1) !important;
+}
+
+/* Navbar Right */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.book-now-btn {
+  border: none;
+  padding: 8px 22px;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.navbar-main:not(.navbar-scrolled) .book-now-btn {
+  background: #c9a27b;
+  color: #ffffff;
+}
+
+.navbar-scrolled .book-now-btn {
+  background: #c9a27b;
+  color: #ffffff !important;
+}
+
+.navbar-main:not(.navbar-scrolled) .book-now-btn:hover {
+  background: #ffffff;
+  color: #c9a27b;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(201, 162, 123, 0.4);
+}
+
+.navbar-scrolled .book-now-btn:hover {
+  background: #1a1a1a;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   LOGIN & REGISTER BUTTONS - Fixed with Words
+   ============================================ */
+.login-btn-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  min-width: 70px;
+}
+
+.navbar-main:not(.navbar-scrolled) .login-btn-nav {
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-scrolled .login-btn-nav {
+  color: #1a1a1a !important;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.navbar-main:not(.navbar-scrolled) .login-btn-nav:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar-scrolled .login-btn-nav:hover {
+  background: #c9a27b;
+  color: white !important;
+  border-color: #c9a27b;
+}
+
+/* Register button - Gold background */
+.register-btn-nav {
+  background: #c9a27b !important;
+  color: white !important;
+  border-color: #c9a27b !important;
+}
+
+.navbar-main:not(.navbar-scrolled) .register-btn-nav {
+  background: #c9a27b !important;
+  color: white !important;
+  border-color: #c9a27b !important;
+}
+
+.register-btn-nav:hover {
+  background: #a8876a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(201, 162, 123, 0.3);
+}
+
+/* User Section */
+.user-section {
+  position: relative;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 10px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-main:not(.navbar-scrolled) .user-profile-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.navbar-scrolled .user-profile-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.user-profile-btn .user-icon {
+  font-size: 22px;
+  color: #C9A27B;
+}
+
+.navbar-main:not(.navbar-scrolled) .user-profile-btn .user-name {
+  color: white;
+}
+
+.navbar-scrolled .user-profile-btn .user-name {
+  color: #1a1a1a !important;
+}
+
+.user-profile-btn .dropdown-arrow {
+  font-size: 10px;
+  transition: transform 0.3s ease;
+}
+
+.user-profile-btn .dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 240px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+  padding: 8px 0;
+  z-index: 9995;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.98);
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.dropdown-menu.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+  pointer-events: auto !important;
+  display: block !important;
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0ede8;
+}
+
+.dropdown-user-avatar {
+  width: 40px;
+  height: 40px;
+  background: #C9A27B;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.dropdown-username {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.dropdown-role {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border-radius: 10px;
+  display: inline-block;
+  width: fit-content;
+  margin-top: 2px;
+}
+
+.dropdown-role.admin {
+  background: #dc3545;
+  color: white;
+}
+
+.dropdown-role.receptionist {
+  background: #17a2b8;
+  color: white;
+}
+
+.dropdown-role.guest {
+  background: #28a745;
+  color: white;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #e8e5e0;
+  margin: 4px 12px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  border: none;
+  background: transparent;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f5f0eb;
+  color: #C9A27B;
+}
+
+.dropdown-item svg {
+  font-size: 16px;
+  color: #666;
+}
+
+.dropdown-item:hover svg {
+  color: #C9A27B;
+}
+
+.dropdown-item.logout-item {
+  color: #dc3545 !important;
+}
+
+.dropdown-item.logout-item svg {
+  color: #dc3545;
+}
+
+.dropdown-item.logout-item:hover {
+  background: #fde8e8 !important;
+  color: #dc3545 !important;
+}
+
+/* Mobile Auth */
+.mobile-auth {
+  display: none;
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-scrolled .mobile-auth {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+.mobile-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  color: #fff;
+}
+
+.navbar-scrolled .mobile-user-info {
+  color: #1a1a1a;
+}
+
+.mobile-username {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.mobile-role-badge {
+  font-size: 10px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  background: rgba(201, 162, 123, 0.2);
+  color: #c9a27b;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.mobile-logout-btn {
+  color: #ff6b6b !important;
+  background: transparent !important;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.mobile-logout-btn:hover {
+  background: rgba(255, 107, 107, 0.1) !important;
+}
+
+.mobile-login-btn {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff !important;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.navbar-scrolled .mobile-login-btn {
+  border-color: rgba(0, 0, 0, 0.2) !important;
+  color: #1a1a1a !important;
+}
+
+.mobile-register-btn {
+  background: #c9a27b !important;
+  border: none;
+  color: #fff !important;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.mobile-dropdown-item {
+  padding-left: 30px !important;
+}
+
+/* Hamburger */
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar-main:not(.navbar-scrolled) .hamburger-btn {
+  color: #ffffff;
+}
+
+.navbar-scrolled .hamburger-btn {
+  color: #1a1a1a !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .navbar-main {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-main {
+    padding: 0 16px;
+    background: rgba(0, 0, 0, 0.9) !important;
+    height: 60px;
+  }
+  
+  .navbar-scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+  }
+  
+  .navbar-container {
+    height: 60px;
+  }
+  
+  .navbar-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(0, 0, 0, 0.98);
+    flex-direction: column;
+    padding: 20px;
+    gap: 4px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  .navbar-scrolled .navbar-menu {
+    background: rgba(255, 255, 255, 0.98);
+  }
+  
+  .navbar-menu.active {
+    transform: translateX(0);
+  }
+  
+  .navbar-item {
+    width: 100%;
+  }
+  
+  .navbar-link {
+    padding: 12px 16px;
+    font-size: 15px;
+    width: 100%;
+    border-radius: 8px;
+    justify-content: flex-start;
+  }
+  
+  .navbar-link svg {
+    font-size: 18px;
+    width: 24px;
+  }
+  
+  .navbar-right {
+    display: none;
+  }
+  
+  .mobile-auth {
+    display: block;
+  }
+  
+  .hamburger-btn {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0;
+    margin-top: 5px;
+    border: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+  
+  .dropdown-menu.show {
+    display: block !important;
+  }
+  
+  .dropdown-header {
+    display: none;
+  }
+  
+  .dropdown-divider {
+    display: none;
+  }
+  
+  .dropdown-item {
+    color: rgba(255, 255, 255, 0.8) !important;
+    padding: 10px 16px;
+    padding-left: 30px;
+  }
+  
+  .navbar-scrolled .dropdown-item {
+    color: rgba(26, 26, 26, 0.8) !important;
+  }
+  
+  .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+  }
+  
+  .navbar-scrolled .dropdown-item:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  .dropdown-item.logout-item {
+    color: #ff6b6b !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-main {
+    padding: 0 12px;
+    height: 55px;
+  }
+  
+  .navbar-container {
+    height: 55px;
+  }
+  
+  .navbar-menu {
+    top: 55px;
+    height: calc(100vh - 55px);
+    padding: 16px;
+  }
+  
+  .navbar-link {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .logo-text {
+    font-size: 16px;
+  }
+  
+  .logo-sub {
+    font-size: 10px;
+  }
+  
+  .hamburger-btn {
+    font-size: 20px;
+  }
+}

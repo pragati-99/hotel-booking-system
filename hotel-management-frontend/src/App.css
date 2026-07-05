@@ -1,0 +1,223 @@
+/* src/App.css - Complete Fixed */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden !important;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
+  font-family: 'Inter', 'Georgia', serif;
+  background: #C19B76 !important;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden !important;
+  background: #C19B76;
+}
+
+/* ============================================
+   APP LAYOUT
+   ============================================ */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 70px;
+  min-height: 100vh;
+  margin-top: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  background: #C19B76;
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+.container {
+  max-width: 1140px !important;
+  width: 100%;
+  padding: 0 20px !important;
+  margin: 0 auto !important;
+  background: transparent;
+}
+
+/* ============================================
+   COLOR VARIABLES
+   ============================================ */
+:root {
+  --primary-gold: #c9a27b;
+  --primary-gold-dark: #a8876a;
+  --text-dark: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --bg-light: #fafafa;
+  --shadow: 0 10px 40px rgba(0,0,0,0.08);
+  --radius: 12px;
+  --gradient-primary: linear-gradient(135deg, #6C63FF 0%, #3F3D9E 100%);
+  --gradient-secondary: linear-gradient(135deg, #FF6584 0%, #FF2D55 100%);
+  --gradient-success: linear-gradient(135deg, #2ECC71 0%, #27AE60 100%);
+  --gradient-warning: linear-gradient(135deg, #F1C40F 0%, #F39C12 100%);
+  --gradient-info: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
+}
+
+/* ============================================
+   CARDS - Keep White for Readability
+   ============================================ */
+.card {
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  border: none;
+  background: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.card-header {
+  background: white;
+  border-bottom: 1px solid #e8e8e8;
+  font-weight: 600;
+}
+
+/* ============================================
+   PAGE BANNER
+   ============================================ */
+.page-banner {
+  height: 250px;
+  background: url("./assets/images/parallax-16.jpeg") center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.page-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.page-banner h1 {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 40px;
+  letter-spacing: 4px;
+  font-family: 'Georgia', serif;
+  font-weight: 300;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn-primary, .btn-gold {
+  background-color: var(--primary-gold);
+  border: none;
+  color: white !important;
+  padding: 12px 32px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-primary:hover, .btn-gold:hover {
+  background-color: var(--primary-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(201,162,123,0.3);
+}
+
+/* ============================================
+   STATUS BADGES
+   ============================================ */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  animation: scaleIn 0.3s ease both;
+}
+
+.status-available { background: #d4edda; color: #155724; }
+.status-booked { background: #f8d7da; color: #721c24; }
+.status-confirmed { background: #d1ecf1; color: #0c5460; }
+.status-cancelled { background: #e2e3e5; color: #383d41; }
+.status-pending { background: #fff3cd; color: #856404; }
+.status-checked-in { background: #cce5ff; color: #004085; }
+.status-completed { background: #d4edda; color: #155724; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-content { padding-top: 60px; }
+  .container {
+    max-width: 720px !important;
+  }
+  h2 { font-size: 36px; }
+}
+
+@media (max-width: 768px) {
+  .main-content { padding-top: 60px; }
+  h2 { font-size: 30px; }
+  .table th, .table td { padding: 8px 10px; font-size: 12px; }
+  .container {
+    max-width: 540px !important;
+    padding: 0 15px !important;
+  }
+  .btn-primary, .btn-gold { padding: 10px 24px; font-size: 13px; }
+}
+
+@media (max-width: 576px) {
+  .main-content { padding-top: 55px; }
+  .btn-primary, .btn-gold { padding: 8px 16px; font-size: 12px; }
+  h2 { font-size: 26px; }
+  .container {
+    max-width: 100% !important;
+    padding: 0 12px !important;
+  }
+}

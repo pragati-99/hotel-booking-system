@@ -1,0 +1,420 @@
+/* src/styles/Login.css - Complete Fixed - Small & Compact */
+/* ============================================
+   MODAL OVERLAY
+   ============================================ */
+/* Note: .modal-overlay, @keyframes fadeIn and @keyframes slideUp are shared
+   with styles/Modal.css and src/index.css — defining them again here caused
+   two different components to silently fight over the same class/animation
+   names depending on CSS import order. */
+
+/* ============================================
+   MODAL CARDS - Small & Compact
+   ============================================ */
+.login-modal-card,
+.register-modal-card {
+  background: #ffffff;
+  border-radius: 14px;
+  max-width: 400px;
+  width: 100%;
+  padding: 28px 26px;
+  position: relative;
+  animation: slideUp 0.3s ease;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.register-modal-card {
+  max-width: 420px;
+}
+
+/* ============================================
+   CLOSE BUTTON
+   ============================================ */
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #999;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* ============================================
+   HEADER - Small
+   ============================================ */
+.login-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.logo-icon-large {
+  font-size: 32px;
+  color: #C9A27B;
+  background: rgba(201, 162, 123, 0.1);
+  padding: 10px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.login-logo:hover .logo-icon-large {
+  transform: scale(1.08) rotate(-6deg);
+}
+
+.login-header h2 {
+  font-family: 'Georgia', serif;
+  font-weight: 400;
+  font-size: 19px;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.login-header p {
+  color: #888;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* ============================================
+   FORM - Compact
+   ============================================ */
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 3px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* Input Group */
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 11px;
+  color: #999;
+  font-size: 13px;
+  z-index: 2;
+}
+
+.input-group .form-control {
+  padding: 8px 12px 8px 36px;
+  border: 2px solid #e8e8e8;
+  border-radius: 8px;
+  font-size: 13px;
+  width: 100%;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  color: #1a1a1a;
+  height: 38px;
+}
+
+.input-group .form-control:focus {
+  border-color: #C9A27B;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 162, 123, 0.12);
+  background: #ffffff;
+}
+
+.input-group .form-control::placeholder {
+  color: #bbb;
+  font-size: 12px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px;
+  z-index: 2;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #555;
+}
+
+/* ============================================
+   BUTTONS - Small
+   ============================================ */
+.login-btn {
+  padding: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  margin-top: 4px;
+  background: #C9A27B !important;
+  border: none !important;
+  color: white !important;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login-btn:hover {
+  background: #A8876A !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 162, 123, 0.35);
+}
+
+.login-btn:disabled {
+  background: #ccc !important;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.login-btn .spinner-border {
+  width: 14px;
+  height: 14px;
+  border-width: 2px;
+}
+
+/* Register button - Green */
+.register-btn {
+  background: #28a745 !important;
+}
+
+.register-btn:hover {
+  background: #1e7e34 !important;
+}
+
+/* ============================================
+   FOOTER - Compact
+   ============================================ */
+.login-footer {
+  margin-top: 16px;
+  text-align: center;
+  padding-top: 14px;
+  border-top: 1px solid #f0ede8;
+}
+
+.login-footer .text-muted {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.register-link {
+  padding: 7px !important;
+  font-size: 12px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid #C9A27B !important;
+  color: #C9A27B !important;
+  background: transparent !important;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-link:hover {
+  background: #C9A27B !important;
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+  border-color: #6c757d !important;
+  color: #6c757d !important;
+  background: transparent !important;
+}
+
+.btn-outline-secondary:hover {
+  background: #6c757d !important;
+  color: white !important;
+}
+
+/* ============================================
+   TERMS TEXT - Small
+   ============================================ */
+.form-group .text-muted {
+  font-size: 10px;
+  color: #999;
+  display: block;
+  margin-top: 2px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 576px) {
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 10px;
+  }
+
+  .login-modal-card,
+  .register-modal-card {
+    max-width: 100%;
+    border-radius: 14px 14px 0 0;
+    padding: 22px 16px;
+    max-height: 95vh;
+  }
+
+  .login-header h2 {
+    font-size: 17px;
+  }
+
+  .logo-icon-large {
+    font-size: 28px;
+    padding: 8px;
+  }
+
+  .input-group .form-control {
+    padding: 7px 10px 7px 34px;
+    font-size: 13px;
+    height: 36px;
+  }
+
+  .input-icon {
+    font-size: 12px;
+    left: 9px;
+  }
+
+  .password-toggle {
+    font-size: 12px;
+    right: 8px;
+  }
+
+  .login-btn {
+    height: 38px;
+    font-size: 12px;
+    padding: 7px;
+  }
+
+  .register-link {
+    height: 34px;
+    font-size: 11px !important;
+    padding: 6px !important;
+  }
+
+  .modal-close-btn {
+    top: 8px;
+    right: 10px;
+    font-size: 16px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .form-group label {
+    font-size: 10px;
+  }
+
+  .login-footer {
+    margin-top: 14px;
+    padding-top: 12px;
+  }
+
+  .login-footer .text-muted {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-modal-card,
+  .register-modal-card {
+    padding: 18px 12px;
+  }
+
+  .login-header h2 {
+    font-size: 15px;
+  }
+
+  .logo-icon-large {
+    font-size: 24px;
+    padding: 6px;
+  }
+
+  .input-group .form-control {
+    height: 34px;
+    font-size: 12px;
+    padding: 6px 8px 6px 30px;
+  }
+
+  .input-icon {
+    font-size: 11px;
+    left: 8px;
+  }
+
+  .login-btn {
+    height: 34px;
+    font-size: 11px;
+    padding: 6px;
+  }
+
+  .register-link {
+    height: 30px;
+    font-size: 10px !important;
+  }
+
+  .form-group {
+    margin-bottom: 8px;
+  }
+
+  .login-footer {
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+.login-modal-card::-webkit-scrollbar,
+.register-modal-card::-webkit-scrollbar {
+  width: 3px;
+}
+
+.login-modal-card::-webkit-scrollbar-track,
+.register-modal-card::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.login-modal-card::-webkit-scrollbar-thumb,
+.register-modal-card::-webkit-scrollbar-thumb {
+  background: #C9A27B;
+  border-radius: 4px;
+}

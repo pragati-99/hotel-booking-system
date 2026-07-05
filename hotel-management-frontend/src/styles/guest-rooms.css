@@ -1,0 +1,484 @@
+/* src/styles/guest-rooms.css - Complete with 4 Columns */
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+.guest-rooms-container {
+  background: #f8f6f3;
+  padding: 60px 0;
+  min-height: 80vh;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.guest-rooms-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.guest-rooms-header h2 {
+  font-size: 42px;
+  font-family: 'Georgia', serif;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.rooms-count {
+  margin-top: 15px;
+  color: #888;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+/* ============================================
+   SEARCH & FILTER
+   ============================================ */
+.search-filter-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.search-box {
+  position: relative;
+  width: 320px;
+}
+
+.search-box input {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px 0 45px;
+  border: none;
+  border-radius: 50px;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  font-size: 14px;
+}
+
+.search-box input:focus {
+  outline: none;
+  box-shadow: 0 10px 30px rgba(201, 162, 123, 0.2);
+}
+
+.search-box .search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c9a27b;
+  font-size: 16px;
+}
+
+.filter-select {
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  padding: 0 20px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 150px;
+  transition: all 0.4s ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  box-shadow: 0 10px 30px rgba(201, 162, 123, 0.2);
+}
+
+/* ============================================
+   ROOM GRID - 4 Columns
+   ============================================ */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* ============================================
+   ROOM CARD - Premium
+   ============================================ */
+.room-card-guest {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+  position: relative;
+  /* roomFade was identical to the global fadeInUp keyframe — reused
+     instead of keeping a duplicate definition (see index.css) */
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: calc(0.06s * var(--i, 1));
+}
+
+/* Golden Border on Hover */
+.room-card-guest::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #c9a27b;
+  transform: scaleX(0);
+  transition: all 0.4s ease;
+  transform-origin: left;
+  z-index: 10;
+}
+
+.room-card-guest:hover::before {
+  transform: scaleX(1);
+}
+
+.room-card-guest:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================================
+   ROOM IMAGE
+   ============================================ */
+.room-card-image {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.room-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s ease;
+}
+
+.room-card-guest:hover .room-card-image img {
+  transform: scale(1.08);
+}
+
+/* ============================================
+   ROOM OVERLAY
+   ============================================ */
+.room-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.1),
+    transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px;
+}
+
+/* ============================================
+   STATUS BADGE
+   ============================================ */
+.room-status {
+  background: #38b000;
+  color: #fff;
+  padding: 4px 14px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  animation: pulse 2s infinite;
+}
+
+/* ============================================
+   PRICE BADGE
+   ============================================ */
+.room-price-badge {
+  background: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-align: center;
+  color: #b58b63;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.room-price-badge small {
+  display: block;
+  font-size: 10px;
+  color: #666;
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+/* ============================================
+   ROOM CARD BODY
+   ============================================ */
+.room-card-body {
+  padding: 18px 20px 20px;
+}
+
+/* ============================================
+   ROOM TITLE
+   ============================================ */
+.room-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.room-title h3 {
+  font-size: 18px;
+  font-family: 'Georgia', serif;
+  font-weight: 500;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.room-stars {
+  display: flex;
+  gap: 2px;
+  color: #d4a762;
+  font-size: 12px;
+}
+
+/* ============================================
+   ROOM SPECS
+   ============================================ */
+.room-specs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.room-specs span {
+  font-size: 12px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.room-specs span svg {
+  color: #c9a27b;
+  font-size: 13px;
+}
+
+/* ============================================
+   DESCRIPTION
+   ============================================ */
+.room-description {
+  line-height: 1.6;
+  font-size: 13px;
+  color: #888;
+  margin: 12px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================
+   AMENITIES
+   ============================================ */
+.room-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.amenity-tag {
+  padding: 4px 10px;
+  background: #f5f5f5;
+  border-radius: 20px;
+  font-size: 11px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #555;
+}
+
+.amenity-tag:hover {
+  background: #c9a27b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 162, 123, 0.3);
+}
+
+.amenity-tag svg {
+  font-size: 12px;
+}
+
+/* ============================================
+   ROOM CARD FOOTER
+   ============================================ */
+.room-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid #ececec;
+}
+
+.room-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #c9a27b;
+}
+
+.room-price span {
+  font-size: 12px;
+  color: #888;
+  margin-left: 4px;
+  font-weight: 400;
+}
+
+/* ============================================
+   BOOK BUTTON
+   ============================================ */
+.book-now-btn-guest {
+  background: #c9a27b;
+  padding: 8px 18px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.book-now-btn-guest:hover {
+  background: #111;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   NO ROOMS
+   ============================================ */
+.no-rooms {
+  text-align: center;
+  padding: 60px 20px;
+  grid-column: 1 / -1;
+}
+
+.no-rooms h4 {
+  font-family: 'Georgia', serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #1a1a1a;
+}
+
+.no-rooms p {
+  color: #999;
+  font-size: 14px;
+}
+
+/* ============================================
+   ANIMATIONS
+   pulse is defined once, globally, in src/index.css
+   ============================================ */
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* 3 columns */
+@media (max-width: 1200px) {
+  .rooms-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 2 columns */
+@media (max-width: 992px) {
+  .rooms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .guest-rooms-header h2 {
+    font-size: 34px;
+  }
+  
+  .search-box {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* 1 column */
+@media (max-width: 576px) {
+  .guest-rooms-container {
+    padding: 30px 0;
+  }
+  
+  .rooms-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .search-filter-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .search-box {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .filter-select {
+    width: 100%;
+  }
+  
+  .guest-rooms-header h2 {
+    font-size: 28px;
+  }
+  
+  .room-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  
+  .room-card-footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .book-now-btn-guest {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .room-card-image {
+    height: 200px;
+  }
+  
+  .room-title h3 {
+    font-size: 18px;
+  }
+  
+  .room-price {
+    font-size: 20px;
+  }
+  
+  .room-card-body {
+    padding: 16px;
+  }
+}

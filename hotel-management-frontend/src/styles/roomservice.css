@@ -1,0 +1,241 @@
+/* src/styles/roomservice.css - Fixed */
+.room-service {
+  min-height: 700px;
+  background: url("../assets/images/parallax-11.jpeg") center center/cover fixed no-repeat;
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.service-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 80px 0;
+}
+
+.room-service .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.service-content {
+  width: 50%;
+  color: white;
+  animation: slideInLeft 0.7s ease both;
+}
+
+.service-tag {
+  display: inline-block;
+  letter-spacing: 6px;
+  font-size: 13px;
+  color: #c9a27b;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.service-content h2 {
+  font-size: 48px;
+  font-family: 'Georgia', serif;
+  font-weight: 300;
+  margin: 20px 0;
+}
+
+.service-content p {
+  line-height: 1.8;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 30px;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.payment-icons div {
+  background: rgba(201, 162, 123, 0.2);
+  color: white;
+  padding: 8px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.payment-icons div:hover {
+  background: #c9a27b;
+  border-color: #c9a27b;
+}
+
+/* Right Side */
+.promo-area {
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-circle {
+  width: 300px;
+  height: 300px;
+  background: rgba(201, 162, 123, 0.15);
+  border: 3px solid #c9a27b;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  animation: scaleIn 0.7s ease 0.15s both;
+  transition: transform 0.3s ease;
+}
+
+.promo-circle:hover {
+  transform: scale(1.04);
+}
+
+.promo-circle span {
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.promo-circle h1 {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 10px 0;
+  color: #c9a27b;
+}
+
+.promo-circle p {
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+.towel-box {
+  position: absolute;
+  right: -40px;
+  bottom: -30px;
+}
+
+.towel-box img {
+  width: 400px;
+  filter: brightness(0) invert(1) opacity(0.6);
+}
+
+@media (max-width: 992px) {
+  .room-service {
+    /* fixed attachment is unreliable/janky on mobile browsers */
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 1200px) {
+  .promo-circle {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .promo-circle h1 {
+    font-size: 60px;
+  }
+  
+  .towel-box img {
+    width: 320px;
+  }
+}
+
+@media (max-width: 992px) {
+  .room-service .container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .service-content {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .promo-area {
+    width: 100%;
+  }
+  
+  .service-content h2 {
+    font-size: 36px;
+  }
+  
+  .payment-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-overlay {
+    padding: 50px 0;
+  }
+  
+  .service-content h2 {
+    font-size: 30px;
+  }
+  
+  .promo-circle {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .promo-circle h1 {
+    font-size: 50px;
+  }
+  
+  .towel-box img {
+    width: 240px;
+  }
+}
+
+@media (max-width: 576px) {
+  .room-service {
+    min-height: 600px;
+  }
+  
+  .service-content h2 {
+    font-size: 26px;
+  }
+  
+  .promo-circle {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .promo-circle h1 {
+    font-size: 38px;
+  }
+  
+  .towel-box {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 20px;
+  }
+  
+  .towel-box img {
+    width: 180px;
+  }
+  
+  .payment-icons {
+    gap: 10px;
+  }
+  
+  .payment-icons div {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+}

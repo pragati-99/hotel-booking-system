@@ -1,0 +1,96 @@
+/* src/styles/bookingform.css - Fixed */
+.booking-form {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  background: #1f1f1f;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 35px 40px;
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  gap: 20px;
+  /* Same animation as the hero booking wrapper (hero.css) — merged
+     into the shared slideUpCentered keyframe in src/index.css */
+  animation: slideUpCentered 0.7s ease 0.3s both;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.field input,
+.field select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: white;
+  padding: 10px 0;
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.field input:focus,
+.field select:focus {
+  border-bottom-color: #C9A27B;
+}
+
+.field input::placeholder {
+  color: #888;
+}
+
+.field select option {
+  background: #1f1f1f;
+  color: white;
+}
+
+.check-btn {
+  background: #C9A27B;
+  color: white;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.check-btn:hover {
+  background: #a8876a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(201, 162, 123, 0.35);
+}
+
+@media (max-width: 992px) {
+  .booking-form {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px;
+    animation: fadeInUp 0.7s ease 0.3s both;
+  }
+}
+
+@media (max-width: 576px) {
+  .booking-form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 15px;
+  }
+}

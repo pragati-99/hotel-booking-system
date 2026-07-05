@@ -1,0 +1,221 @@
+/* src/styles/pricing.css - Fixed */
+.pricing-section {
+  background: url("../assets/images/parallax-6.jpeg") center center/cover no-repeat;
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.pricing-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 80px 0;
+  min-height: 700px;
+}
+
+.pricing-title {
+  text-align: center;
+  color: white;
+  margin-bottom: 60px;
+}
+
+.pricing-title span {
+  display: inline-block;
+  letter-spacing: 6px;
+  font-size: 13px;
+  color: #c9a27b;
+}
+
+.pricing-title h2 {
+  margin-top: 10px;
+  font-size: 48px;
+  font-family: 'Georgia', serif;
+  font-weight: 300;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.price-card {
+  width: 320px;
+  background: white;
+  padding: 40px 35px;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.price-card:nth-child(1) { animation-delay: 0.05s; }
+.price-card:nth-child(2) { animation-delay: 0.15s; }
+.price-card:nth-child(3) { animation-delay: 0.25s; }
+
+.price-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+}
+
+.price-card h3 {
+  font-size: 24px;
+  font-family: 'Georgia', serif;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+
+.price {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 20px 0;
+  color: #1a1a1a;
+}
+
+.price span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #999;
+}
+
+.price-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.price-card li {
+  padding: 8px 0;
+  color: #666;
+  font-size: 14px;
+  border-bottom: 1px solid #f0ede8;
+}
+
+.price-card li:last-child {
+  border-bottom: none;
+}
+
+.price-card button {
+  background: #C9A27B;
+  color: white;
+  border: none;
+  padding: 12px 35px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.price-card button:hover {
+  background: #a8876a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201, 162, 123, 0.3);
+}
+
+/* Featured Card */
+.featured {
+  background: #1a1a1a;
+  color: white;
+  transform: scale(1.05);
+  position: relative;
+  z-index: 2;
+  /* higher specificity than .price-card's animation so the scale survives entrance */
+  animation: fadeInUpScaled 0.6s ease 0.15s both;
+}
+
+@keyframes fadeInUpScaled {
+  from { opacity: 0; transform: scale(1.05) translateY(24px); }
+  to { opacity: 1; transform: scale(1.05) translateY(0); }
+}
+
+.featured:hover {
+  /* combine base scale with the shared hover lift so the featured card doesn't lose its emphasis on hover */
+  transform: scale(1.05) translateY(-5px);
+}
+
+.featured h3 {
+  color: #fff;
+}
+
+.featured .price {
+  color: #c9a27b;
+}
+
+.featured .price span {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.featured li {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.featured button {
+  background: #c9a27b;
+  color: white;
+}
+
+.featured button:hover {
+  background: #a8876a;
+}
+
+.featured-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #c9a27b;
+  color: white;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .price-card {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .featured {
+    transform: none;
+    animation: fadeInUp 0.6s ease 0.15s both;
+  }
+
+  .featured:hover {
+    transform: translateY(-5px);
+  }
+  
+  .pricing-title h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 576px) {
+  .pricing-overlay {
+    padding: 50px 0;
+  }
+  
+  .pricing-title h2 {
+    font-size: 28px;
+  }
+  
+  .price-card {
+    padding: 30px 20px;
+  }
+  
+  .price {
+    font-size: 36px;
+  }
+}
